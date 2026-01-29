@@ -5,13 +5,8 @@ PROBLEMS:
 -> Over calculation of distance
 '''
 
-
-
-
-
 import RPi.GPIO as GPIO
 import time
-
 
 '''Pin Declarations (BCM Mode)'''
 #Left motors
@@ -39,8 +34,6 @@ left = None
 right = None
 left_encoder_count = 0
 right_encoder_count = 0
-
-
 
 
 def moveForward(speedL, speedR):
