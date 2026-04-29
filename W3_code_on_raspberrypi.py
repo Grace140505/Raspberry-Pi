@@ -628,7 +628,6 @@ def image_worker(
             _write_str(out_instruction, instruction, 32)
             out_instruction_ready.value = True
 
-
 # ══════════════════════════════════════════════════════════════
 # MAIN
 # ══════════════════════════════════════════════════════════════
@@ -797,28 +796,6 @@ def main():
                     print("\n[main] Scan complete — continuing in 5 seconds.")
                     time.sleep(4.5)
                     active_instruction = ""
-                    
-                # elif active_instruction == "SCAN_STOP":
-                #     print("[main] SCAN_STOP — halting for 10 s, then sending frame to Flask…")
-                #     stop_motors(pwm_motor_a, pwm_motor_b)
-                #     for remaining in range(10, 0, -1):
-                #         print(f"[main] Scanning pause … {remaining}s remaining", end="\r")
-                #         time.sleep(1)
-                #     print()
-                #     scan_frame = picam2.capture_array()
-                #     if scan_frame.ndim == 3 and scan_frame.shape[2] == 4:
-                #         scan_frame = scan_frame[:, :, :3]
-                #     flask_result = send_frame_to_flask(scan_frame)
-                #     if flask_result:
-                #         faces = flask_result.get("faces", [])
-                #         if faces:
-                #             names = [f["name"] for f in faces]
-                #             print(f"[main] Flask identified: {', '.join(names)}")
-                #         else:
-                #             print("[main] Flask found no faces in frame.")
-                #     else:
-                #         print("[main] No response from Flask — continuing.")
-                #     active_instruction = ""
 
             else:
                 # Normal line-following drive
