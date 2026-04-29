@@ -410,7 +410,6 @@ def detect_shape(contour):
         return "Arrow", direction
     return "Unknown", None
 
-
 # ══════════════════════════════════════════════════════════════
 # IMAGE-RECOGNITION WORKER PROCESS
 # ══════════════════════════════════════════════════════════════
