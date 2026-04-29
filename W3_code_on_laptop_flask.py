@@ -87,7 +87,6 @@ def analyze_face():
             "name": name,
             "location": [top * 2, right * 2, bottom * 2, left * 2]
         })
-
     # Return coordinates to the Pi so the Pi can draw it on the stream!
     return jsonify({"faces": faces_data})
 
