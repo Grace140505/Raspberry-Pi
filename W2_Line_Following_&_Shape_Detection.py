@@ -1,7 +1,6 @@
 # =========================================================
 # Combined Line Follow (Lower ROI) + Symbol/Shape Detect (Upper ROI)
 # =========================================================
-
 from picamera2 import Picamera2
 import cv2 as cv
 import numpy as np
