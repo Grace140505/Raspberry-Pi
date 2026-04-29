@@ -105,33 +105,8 @@ def line_detection(BGR_frame,GRAYSCALE_frame):
             processed_image = cv.drawContours(local_BGR_frame, [largest_contour], -1, (0,255,0), 2)
             PID_control()
             moveForward(LEFT_BASE_SPEED - output_x, RIGHT_BASE_SPEED + output_x)
-            # if (current_y >= 220):
-            #     if (output_x < 0.00):
-            #         moveForward(-LEFT_BASE_SPEED,RIGHT_BASE_SPEED)
-            #     elif (output_x > 0.00):
-            #         moveForward(LEFT_BASE_SPEED,-RIGHT_BASE_SPEED)
-            #     else:
-            #         while(1):
-            #             moveBackward(50)
-            #             time.sleep(0.5)
-            #             stop()
-            # else:
-            #     moveForward(LEFT_BASE_SPEED - output_x, RIGHT_BASE_SPEED + output_x)
             return processed_image
         else:
-            # if ((current_y >= 220.0) and (current_x <= 220.0)):
-            #     moveForward(RIGHT_BASE_SPEED + output_x , LEFT_BASE_SPEED - output_x)
-            # else:
-            #     moveForward(LEFT_BASE_SPEED - output_x, RIGHT_BASE_SPEED + output_x)
-            # if (current_y >= 200):
-            #     if (current_x > 320.0): #
-            #         moveForward(-40,60)
-            #         time.sleep(5)
-            #         prev_dir = 'L'
-            #     elif (current_x <= 320.00): #
-            #         moveForward(60,-40)
-            #         time.sleep(0.5)
-            #         prev_dir = 'R'
             moveForward(LEFT_BASE_SPEED - output_x, RIGHT_BASE_SPEED + output_x)
             return local_BGR_frame
     else: # If no contours, return the cropped frame itself
@@ -139,23 +114,6 @@ def line_detection(BGR_frame,GRAYSCALE_frame):
             moveForward(-40,50)
         else:
             moveForward(50,-40)
-
-        # moveForward(LEFT_BASE_SPEED - output_x, RIGHT_BASE_SPEED 
-        # if (current_y >= 
-        #     if (output_x > 0): #
-        #         while(1):
-        #             stop()
-        #         moveForward(-40,60)
-        #         time.sleep(5)
-        #         prev_dir = 'L'
-        #     elif (output_x <= 0): #
-        #         moveForward(60,-40)
-        #         time.sleep(0.5)
-        #         prev_dir = 'R'
-        # else:
-        #     None
-
-        # moveForward(LEFT_BASE_SPEED - output_x, RIGHT_BASE_SPEED + output_x)
         return local_BGR_frame
 
 def cal_FPS(BGR_frame):
