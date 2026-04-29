@@ -32,8 +32,6 @@ RIGHT_BASE_SPEED = 66
 left_encoder_count = 0
 right_encoder_count = 0
 
-
-
 #Global variables
 prev_time = time.monotonic()
 # For PID
@@ -148,7 +146,6 @@ def PID_control():
     # Control output (for example, motor speed)
     output_x = P_x + I_x + D_x
     
-
 '''Motor movement'''
 def func_init():
     global pwm_left, pwm_right
@@ -246,7 +243,6 @@ def stop(): #With dynamic breaking
     pwm_left.ChangeDutyCycle(0)
     pwm_right.ChangeDutyCycle(0)
 '''==============='''
-
 
 '''Encoder ISR'''
 def encoder_callback(channel):
