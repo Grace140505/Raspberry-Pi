@@ -50,7 +50,6 @@ def is_diamond_vs_trapezium(approx):
     side_ratio = max_side / min_side
     diag_ratio = max(diag1, diag2) / min(diag1, diag2)
 
-
     if side_ratio < 1.2 and diag_ratio < 1.3:
         return True  # Diamond
 
@@ -75,7 +74,6 @@ def detect_shape(contour):
     x, y, w, h = cv.boundingRect(contour)
     aspect_ratio = w / float(h)
     
-
     # ---- Shape Rules ----
     if vertices == 4 and is_convex and 0.9 <= aspect_ratio <= 1.35:
         if(is_diamond_vs_trapezium(approx)):
@@ -174,8 +172,6 @@ def find_simple_shapes(frame, display_frame):
             print("No shape detected")
             break
     
-            
-
 def main():
     picam2 = Picamera2()
     picam2.configure(picam2.create_preview_configuration(main={"size": (640, 480)}))
